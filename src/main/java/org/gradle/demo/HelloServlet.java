@@ -22,4 +22,3 @@ public class HelloServlet extends HttpServlet {
         request.getRequestDispatcher("response.jsp").forward(request, response); 
     }
 }
-
