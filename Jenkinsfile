@@ -15,7 +15,7 @@ pipeline {
                 sh './gradlew zip'
                 sh 'pwd'
                 sh 'll'
-                #archiveArtifacts artifacts: 'dist/webdemo.zip'
+                //archiveArtifacts artifacts: 'dist/webdemo.zip'
             }
         }
     }
