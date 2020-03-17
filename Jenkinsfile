@@ -9,10 +9,16 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                echo 'Generating and archiving artifacts'
+                echo 'Generating zip'
                 sh './gradlew zip --no-daemon'
-                archiveArtifacts artifacts: 'dist/webdemo.zip'
             }
+        }
+    }
+    post {
+        always {
+            echo 'Archiving artifact'
+            archiveArtifacts artifacts: 'dist/webdemo.zip'
+            junit 'build/reports/tests/test/index.html'
         }
     }
 }
