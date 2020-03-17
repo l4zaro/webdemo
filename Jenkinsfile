@@ -18,7 +18,13 @@ pipeline {
         always {
             echo 'Archiving artifact'
             archiveArtifacts artifacts: 'dist/webdemo.zip'
-            junit 'build/reports/tests/test/index.html'
+            publishHTML (target : [allowMissing: false,
+                         alwaysLinkToLastBuild: true,
+                         keepAll: false,
+                         reportDir: 'build/reports/tests/test',
+                         reportFiles: 'index.html',
+                         reportName: 'Test Report',
+                         reportTitles: 'WebDemo Report'])
         }
     }
 }
