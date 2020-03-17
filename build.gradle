@@ -12,8 +12,8 @@ repositories {
 }
 
 task zip(type: Zip) {
-    from ('.') {
-        include "gradle/wrapper/**"
+    from ('build/libs/') {
+        include "*.war"
     }
     destinationDir(file("dist"))
     baseName "webdemo"
