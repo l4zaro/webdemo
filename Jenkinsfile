@@ -4,13 +4,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh './gradlew clean test --no-daemon'
+                sh './gradlew clean test'
             }
         }
         stage('Archive') {
             steps {
                 echo 'Generating and archiving artifacts'
-                sh './gradlew zip --no-daemon'
+                sh './gradlew zip'
                 archiveArtifacts artifacts: 'dist/webdemo.zip'
             }
         }
