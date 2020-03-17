@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "HelloServlet", urlPatterns = {"hello"}, loadOnStartup = 1) 
+@WebServlet(name = "HelloServlet", urlPatterns = {"hello"}, loadOnStartup = 1)
 public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        response.getWriter().print("Hello, World!");  
+        response.getWriter().print("Hello, World!");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -19,6 +19,6 @@ public class HelloServlet extends HttpServlet {
         String name = request.getParameter("name");
         if (name == null) name = "World";
         request.setAttribute("user", name);
-        request.getRequestDispatcher("response.jsp").forward(request, response); 
+        request.getRequestDispatcher("response.jsp").forward(request, response);
     }
 }
