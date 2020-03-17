@@ -6,7 +6,7 @@ pipeline {
                 echo 'Running build automation'
                 sh './gradlew clean test'
                 sh 'pwd'
-                sh 'll'
+                sh 'ls -la build'
             }
         }
         stage('Archive') {
@@ -14,7 +14,7 @@ pipeline {
                 echo 'Generating and archiving artifacts'
                 sh './gradlew zip'
                 sh 'pwd'
-                sh 'll'
+                sh 'ls -la build'
                 //archiveArtifacts artifacts: 'dist/webdemo.zip'
             }
         }
