@@ -11,8 +11,16 @@ repositories {
     jcenter()
 }
 
+task zip(type: Zip) {
+    from ('.') {
+        include "gradle/wrapper/**"
+    }
+    destinationDir(file("dist"))
+    baseName "webdemo"
+}
+
 dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-   	testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.7.19'
 }
